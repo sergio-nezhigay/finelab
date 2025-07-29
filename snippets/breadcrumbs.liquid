@@ -1,0 +1,113 @@
+{%- if request.page_type != 'index' -%}
+  <div class="site-breadcrumb" style="padding: 1rem 2rem; direction: rtl; text-align: right;">
+    <nav role="navigation" aria-label="Breadcrumb">
+      <ul style="display: inline-flex; flex-wrap: wrap; gap: 0.5em; font-size: 0.875rem; list-style: none; padding: 0; margin: 0;">
+        <li><a href="{{ routes.root_url }}">דף הבית</a></li>
+
+        {%- if request.page_type == 'collection' and collection.handle != blank -%}
+
+         {%- assign hierarchy = '
+  bags:לייף סטייל|,
+  babies:חדר שינה|,
+  lighting:חלל מגורים|,
+  swaddle-blankets:שמיכות ציפות וכיסויי מיטה|חדר שינה,
+  carpets:חלל מגורים|,
+  bath-mat:חדר רחצה|,
+  coffee-and-side-tables:ריהוט פנים|חלל מגורים,
+  dining-tables:ריהוט פנים|חלל מגורים,
+  interior-furniture:חלל מגורים|,
+  outdoor-furniture:outdoor|,
+  furniture:|,
+  clothes:לייף סטייל|,
+  consoles:ריהוט פנים|חלל מגורים,
+  plants:outdoor|,
+  plates:שולחן ואירוח|,
+  pillowcases:כריות וציפיות|חדר שינה,
+  duvet-covers:שמיכות ציפות וכיסויי מיטה|חדר שינה,
+  natural-linen:|,
+  candles-perfumes:חלל מגורים|,
+  dining-kitchen:|,
+  bean-bags:outdoor|,
+  hammocks:outdoor|,
+  home-design:|,
+  design-books:חלל מגורים|,
+  sofas-and-armchairs:ריהוט פנים|חלל מגורים,
+  baskets:חלל מגורים|,
+  stoles:ריהוט פנים|חלל מגורים,
+  flatware-sets:סכו"ם|שולחן ואירוח,
+  bedsheets:חדר שינה|,
+  candles-and-candlesticks:חדר שינה|,
+  linen-bedding:מצעים לפי סוג בד|חדר שינה,
+  pika-bedding:מצעים לפי סוג בד|חדר שינה,
+  placement:שולחן ואירוח|,
+  bed:חדר שינה|,
+  kitchen-towels:שולחן ואירוח|,
+  cups-mugs:שולחן ואירוח|,
+  bath-towels:חדר רחצה|,
+  fragrances:חלל מגורים|,
+  decorative-pillows:טקסטיל|חלל מגורים,
+  pillow-filling:כריות וציפיות|חדר שינה,
+  pillows:חדר שינה|,
+  organic-cotton-jersey:מצעים לפי סוג בד|חדר שינה,
+  egyptian-cotton:מצעים לפי סוג בד|חדר שינה,
+  closets:ריהוט פנים|חלל מגורים,
+  curtains:טקסטיל|חלל מגורים,
+  accessories:חלל מגורים|,
+  wall-art:חלל מגורים|,
+  bath-accessories:חדר רחצה|,
+  serving-and-hosting:שולחן ואירוח|,
+  sofa-and-bed-covers:שמיכות ציפות וכיסויי מיטה|חדר שינה,
+  chairs:ריהוט פנים|חלל מגורים
+' | split: ',' -%}
+
+
+          {%- assign current_handle = collection.handle -%}
+          {%- assign level1 = '' -%}
+          {%- assign level2 = '' -%}
+
+          {%- for item in hierarchy -%}
+            {%- assign parts = item | split: ':' -%}
+            {%- assign handle = parts[0] | strip -%}
+            {%- assign parents = parts[1] | split: '|' -%}
+            {%- assign parent1 = parents[0] | strip -%}
+            {%- assign parent2 = parents[1] | strip -%}
+
+            {%- if handle == current_handle -%}
+              {%- assign level1 = parent1 -%}
+              {%- assign level2 = parent2 -%}
+            {%- endif -%}
+          {%- endfor -%}
+
+          {%- if level2 != blank -%}
+            <li>/</li>
+            <li><a href="/collections/{{ level2 | handleize }}">{{ level2 }}</a></li>
+          {%- endif -%}
+          {%- if level1 != blank -%}
+            <li>/</li>
+            <li><a href="/collections/{{ level1 | handleize }}">{{ level1 }}</a></li>
+          {%- endif -%}
+
+          <li>/</li>
+          <li><span>{{ collection.title }}</span></li>
+
+        {%- elsif request.page_type == 'product' and product.handle != blank -%}
+          {%- if collection and collection.title != blank -%}
+            <li>/</li>
+            <li><a href="{{ collection.url }}">{{ collection.title }}</a></li>
+          {%- endif -%}
+          <li>/</li>
+          <li><span>{{ product.title }}</span></li>
+{%- elsif request.page_type == 'article' and article.handle != blank -%}
+  <li>/</li>
+  <li><a href="{{ blog.url }}">{{ blog.title }}</a></li>
+  <li>/</li>
+  <li><span>{{ article.title }}</span></li>
+
+        {%- elsif request.page_type == 'page' and page.handle != blank -%}
+          <li>/</li>
+          <li><span>{{ page.title }}</span></li>
+        {%- endif -%}
+      </ul>
+    </nav>
+  </div>
+{%- endif -%}

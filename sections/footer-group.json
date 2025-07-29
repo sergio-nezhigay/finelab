@@ -1,0 +1,120 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "footer",
+  "name": "Footer group",
+  "sections": {
+    "text-with-icons": {
+      "type": "text-with-icons",
+      "blocks": {
+        "icon-1": {
+          "type": "item",
+          "settings": {
+            "icon": "picto-award-gift",
+            "icon_width": 24,
+            "mobile_icon_width": 24,
+            "title": "התקשרו אלינו",
+            "content": "<p>Short content about your store</p>"
+          }
+        },
+        "icon-2": {
+          "type": "item",
+          "settings": {
+            "icon": "picto-award-gift",
+            "icon_width": 24,
+            "mobile_icon_width": 24,
+            "title": "Satisfied or refunded",
+            "content": "<p>Short content about your store</p>"
+          }
+        },
+        "icon-3": {
+          "type": "item",
+          "settings": {
+            "icon": "picto-award-gift",
+            "icon_width": 24,
+            "mobile_icon_width": 24,
+            "title": "Top-notch support",
+            "content": "<p>Short content about your store</p>"
+          }
+        },
+        "icon-4": {
+          "type": "item",
+          "settings": {
+            "icon": "picto-award-gift",
+            "icon_width": 24,
+            "mobile_icon_width": 24,
+            "title": "Secure payments",
+            "content": "<p>Short content about your store</p>"
+          }
+        }
+      },
+      "block_order": [
+        "icon-1",
+        "icon-2",
+        "icon-3",
+        "icon-4"
+      ],
+      "settings": {
+        "separate_section_with_border": true,
+        "stack_on_mobile": false,
+        "icon_color": "",
+        "text_color": "",
+        "text_alignment": "center"
+      }
+    },
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "newsletter": {
+          "type": "newsletter",
+          "settings": {
+            "title": "<strong>הצטרפו לניוזלטר שלנו !</strong>",
+            "content": "<p><strong>הרשמו לניוזלטר שלנו ותהיו ראשונים לדעת על הנחות ומבצעים מיוחדים ותהנו מ 10% הנחה על הרכישה הראשונה שלכם באתר. * ללקוחות חדשים בלבד.</strong></p>",
+            "button_background": "",
+            "button_text_color": ""
+          }
+        },
+        "links": {
+          "type": "links",
+          "settings": {
+            "menu": "footer",
+            "show_menu_title": true
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "title": "קצת על פיין לאב",
+            "content": "<p><strong>חנויות וסטודיו למוצרי בית וטקסטיל, השומרת על סקאלת צבעים שקטה ומינימליסטית של צבעי אדמה, לבן ואפור.<br/>המוצרים מיוצרים עם דגש על רכות, נועם וטבעיות כל מה שקשור לבית, לאופנה ולחיים שאנשים אוהבים.</strong></p>",
+            "enable_follow_on_shop": true
+          }
+        }
+      },
+      "block_order": [
+        "newsletter",
+        "links",
+        "text"
+      ],
+      "settings": {
+        "separate_section_with_border": false,
+        "show_social_media": true,
+        "show_payment_icons": false,
+        "show_country_selector": false,
+        "show_country_name": false,
+        "show_country_flag": false,
+        "show_locale_selector": false
+      }
+    }
+  },
+  "order": [
+    "text-with-icons",
+    "footer"
+  ]
+}

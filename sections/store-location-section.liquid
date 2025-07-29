@@ -1,0 +1,197 @@
+{% assign store = page.metafields.custom.store_location_ref.value %}
+
+<div class="store-location-wrapper">
+  {% if store %}
+    <div class="store-location-inner">
+    
+      <div class="store-info">
+        <h1>{{ store.title.value }}</h1>
+        <p><strong>כתובת:</strong> {{ store.address.value }}</p>
+        <p><strong>טלפון:</strong> <a href="tel:{{ store.phone.value }}">{{ store.phone.value }}</a></p>
+        <p><strong>שעות פתיחה:</strong><br>{{ store.opening_hours_.value | newline_to_br }}</p>
+
+        <a href="https://www.waze.com/en/live-map/directions/%D7%A4%D7%99%D7%99%D7%9F-%D7%9C%D7%90%D7%91-%D7%A2%D7%99%D7%9F-%D7%95%D7%A8%D7%93-%D7%94%D7%A6%D7%91%D7%A8-12?navigate=yes&to=place.w.22872387.228920475.2086990"
+           target="_blank"
+           style="display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none; background: #CBBFA3; color: black; padding: 0.5rem 1rem; border-radius: 8px; font-weight: bold;">
+          <img src="https://cdn.shopify.com/s/files/1/0057/5976/2499/files/waze-icon.png?v=1746966010"
+               alt="Waze icon"
+               style="width: 20px; height: 20px;">
+          ניווט עם Waze
+        </a>
+
+        <div class="google-reviews-section">
+          <h2 style="font-size: 1.5rem; margin-bottom: 1rem; text-align: center;">
+            מה הלקוחות שלנו אומרים על החנות בעין ורד
+          </h2>
+
+          <div class="google-reviews-wrapper">
+            <div class="elfsight-sapp-f442697a-4fb7-4792-ae31-ca589e71aeb6"></div>
+          </div>
+        </div> <!-- סגירת google-reviews-section -->
+      </div> <!-- סגירת store-info -->
+
+      <div class="store-map">
+        <div class="map-wrapper">
+          {{ store.google_map_embed.value }}
+        </div>
+      </div>
+
+    </div> <!-- סגירת store-location-inner -->
+
+    {% if store.bottom_image or store.bottom_text %}
+      <div class="store-bottom-layout">
+        <div class="store-bottom-section">
+          {% if store.bottom_image %}
+            <img src="{{ store.bottom_image | image_url: width: 1200 }}" alt="{{ store.title.value }} - תמונה תחתונה" />
+          {% endif %}
+          {% if store.bottom_text %}
+            <p>{{ store.bottom_text }}</p>
+          {% endif %}
+        </div>
+      </div>
+    {% endif %}
+
+  {% else %}
+    <p>⚠️ לא נמצא מידע על הסניף</p>
+  {% endif %}
+</div>
+
+<script src="https://apps.elfsight.com/p/platform.js" defer></script>
+
+<style>
+  /* עטיפת כל העמוד */
+  .store-location-wrapper {
+    background-color: #f5f1ea;
+    padding: 2rem;
+  }
+
+  /* פריסת תוכן ראשית: מידע + מפה */
+  .store-location-inner {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+
+  /* עמודת מידע על הסניף */
+  .store-info {
+    flex: 1;
+    min-width: 300px;
+  }
+
+  /* עמודת מפה */
+  .store-map {
+    flex: 1;
+    min-width: 300px;
+    overflow: hidden;
+  }
+
+  .store-map .map-wrapper {
+    height: 100%;
+    min-height: 500px;
+    overflow: hidden;
+  }
+
+  .store-map iframe {
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+    border: none;
+  }
+
+  /* עיצוב קרוסלת ביקורות של Elfsight */
+  .google-reviews-wrapper {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    box-sizing: border-box;
+  }
+
+  .google-reviews-wrapper iframe,
+  .google-reviews-wrapper .elfsight-app {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box;
+  }
+
+  /* התאמות מובייל */
+  @media screen and (max-width: 768px) {
+    .store-location-inner {
+      flex-direction: column-reverse;
+    }
+
+    .store-map {
+      width: 100%;
+    }
+
+    .store-map .map-wrapper {
+      width: 100%;
+      min-height: 300px;
+    }
+
+    .store-map iframe {
+      width: 100% !important;
+      min-height: 300px !important;
+      height: 300px !important;
+      border: none;
+      display: block;
+    }
+
+    .store-info {
+      text-align: center;
+    }
+
+    .google-reviews-section {
+      margin-top: 1.5rem;
+    }
+
+    .store-info a[target="_blank"] {
+      margin-top: 1rem;
+      display: inline-block;
+    }
+
+    .store-bottom-section {
+      margin-top: 0.75rem;
+      text-align: center;
+      background-color: #fff;
+      padding: 2rem 1rem;
+    }
+
+    .store-bottom-section img {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 1rem;
+      border-radius: 8px;
+    }
+
+    .store-bottom-section p {
+      font-size: 1rem;
+      color: #333;
+      line-height: 1.6;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+  }
+
+  /* ✅ פריסה דו־עמודתית בדסקטופ */
+  @media screen and (min-width: 769px) {
+    .store-bottom-layout {
+      display: flex;
+      gap: 3rem;
+      align-items: flex-start;
+      margin-top: 3rem;
+    }
+
+    .store-bottom-layout .store-bottom-section {
+      flex: 1;
+    }
+
+    .store-bottom-layout .store-map {
+      flex: 1;
+      min-height: 400px;
+    }
+
+    .store-map iframe {
+      height: 100%;
+    }
+  }
+</style>

@@ -1,0 +1,259 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "vendor": {
+          "type": "vendor",
+          "disabled": true,
+          "settings": {}
+        },
+        "title": {
+          "type": "title",
+          "settings": {
+            "heading_tag": "h3"
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "show_taxes_notice": false
+          }
+        },
+        "payment_terms": {
+          "type": "payment_terms",
+          "settings": {}
+        },
+        "separator": {
+          "type": "separator",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "hide_sold_out_variants": false,
+            "selector_type": "block",
+            "color_selector_type": "dropdown",
+            "size_chart_page": ""
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_payment_button": false,
+            "show_gift_card_recipient": true,
+            "atc_button_background": "#1c1c1c",
+            "atc_button_text_color": "#ffffff",
+            "payment_button_background": "",
+            "payment_button_text_color": ""
+          }
+        },
+        "feature_with_icon_FMm7QD": {
+          "type": "feature_with_icon",
+          "settings": {
+            "text": "משלוח מהיר 5-7 ימי עסקים",
+            "link": "",
+            "icon": "none",
+            "custom_icon": "shopify://shop_images/Trolley.png",
+            "icon_width": 32,
+            "background": "#ffffff",
+            "text_color": "#1c1c1c",
+            "border_color": ""
+          }
+        },
+        "feature_with_icon_zbxVM4": {
+          "type": "feature_with_icon",
+          "settings": {
+            "text": "משלוח חינם",
+            "link": "",
+            "icon": "none",
+            "custom_icon": "shopify://shop_images/Free_Shipping.png",
+            "icon_width": 32,
+            "background": "#ffffff",
+            "text_color": "#1c1c1c",
+            "border_color": ""
+          }
+        },
+        "feature_with_icon_wNiRiB": {
+          "type": "feature_with_icon",
+          "settings": {
+            "text": "החזרות/החלפות- עד 14 ימי עסקים",
+            "link": "",
+            "icon": "none",
+            "custom_icon": "shopify://shop_images/Frame_3.png",
+            "icon_width": 32,
+            "background": "#ffffff",
+            "text_color": "#1c1c1c",
+            "border_color": ""
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+            "collapse_content": false,
+            "show_below_gallery": false
+          }
+        },
+        "accordion_CWY3rf": {
+          "type": "accordion",
+          "settings": {
+            "show_below_gallery": false,
+            "icon": "none",
+            "title": "תנאי משלוחים והחזרות",
+            "content": "<p>Share some content to your customers about your products.</p>",
+            "page": ""
+          }
+        },
+        "accordion_DfEVfq": {
+          "type": "accordion",
+          "settings": {
+            "show_below_gallery": false,
+            "icon": "none",
+            "title": "איסוף עצמי",
+            "content": "<p><strong>מושב עין ורד (ליד אבן יהודה) - רחוב הצברראשון - חמישי 09:30-17:30 | שישי 9:30-14:30<br/><br/>מושב עין ורד (ליד אבן יהודה) - רחוב הצברראשון - חמישי 09:30-17:30 | שישי 9:30-14:30</strong></p>",
+            "page": ""
+          }
+        },
+        "complementary_products": {
+          "type": "complementary_products",
+          "settings": {
+            "title": "השלימו עם",
+            "products_count": 2,
+            "show_below_gallery": true,
+            "stack_products": false,
+            "show_quick_buy": true
+          }
+        }
+      },
+      "block_order": [
+        "vendor",
+        "title",
+        "price",
+        "payment_terms",
+        "separator",
+        "variant_picker",
+        "quantity_selector",
+        "buy_buttons",
+        "feature_with_icon_FMm7QD",
+        "feature_with_icon_zbxVM4",
+        "feature_with_icon_wNiRiB",
+        "description",
+        "accordion_CWY3rf",
+        "accordion_DfEVfq",
+        "complementary_products"
+      ],
+      "settings": {
+        "container_size": "lg",
+        "product_info_size": 35,
+        "show_sticky_add_to_cart": true,
+        "center_basic_info": false,
+        "desktop_media_layout": "carousel_thumbnails_bottom",
+        "desktop_media_grid_gap": 30,
+        "mobile_controls": "dots",
+        "enable_media_autoplay": false,
+        "enable_video_looping": true,
+        "enable_image_zoom": true,
+        "max_image_zoom_level": 3
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "settings": {
+        "separate_section_with_border": true,
+        "hide_product_information": false,
+        "stack_products": false,
+        "recommendations_count": 10,
+        "products_per_row_mobile": "2",
+        "products_per_row_desktop": 4,
+        "horizontal_spacing_factor": 1,
+        "vertical_spacing_factor": 1,
+        "subheading": "",
+        "title": "מוצרים נוספים שיכולים לעניין אותך",
+        "content": ""
+      }
+    },
+    "recently_viewed_products_hcJAbE": {
+      "type": "recently-viewed-products",
+      "name": "t:sections.recently_viewed_products.presets.recently_viewed_products.name",
+      "settings": {
+        "separate_section_with_border": true,
+        "hide_product_information": false,
+        "stack_products": false,
+        "products_count": 9,
+        "products_per_row_mobile": "2",
+        "products_per_row_desktop": 4,
+        "horizontal_spacing_factor": 1,
+        "vertical_spacing_factor": 1,
+        "subheading": "",
+        "title": "Recently viewed products",
+        "content": ""
+      }
+    },
+    "faq_Ycxx6d": {
+      "type": "faq",
+      "blocks": {
+        "question_amkxhY": {
+          "type": "question",
+          "settings": {
+            "question": "<strong>האם ניתן לבצע הזמנה טלפונית?</strong>",
+            "answer": "<p>כן ניתן לבצע הזמנה טלפונית בימים ראשון עד חמישי בין השעות 10:00 ועד 15:00, בטלפון מספר 054-3505858</p>"
+          }
+        },
+        "question_c4UQyk": {
+          "type": "question",
+          "settings": {
+            "question": "<strong>האם ניתן לבטל הזמנה שביצעתי באתר?</strong>",
+            "answer": "<p>ניתן בהתאם ובכפוף ל<a href=\"https://finelab.shop/pages/%D7%9E%D7%A9%D7%9C%D7%95%D7%97%D7%99%D7%9D-%D7%95%D7%94%D7%97%D7%96%D7%A8%D7%95%D7%AA\" target=\"_blank\"><span style=\"text-decoration:underline\">מדיניות ההחזרות והביטולים</span></a> שלנו.</p>"
+          }
+        },
+        "question_d3PPJm": {
+          "type": "question",
+          "settings": {
+            "question": "<strong>תוך כמה זמן אקבל את ההזמנה שלי?</strong>",
+            "answer": "<p>לאחר ביצוע תשלום וקבלת אישור הזמנה, קבלת המוצרים הינה כ- 5 עד 7 ימי עסקים. למעט מוצרים חריגים בהם יופיע זמן האספקה הספיציפי בתיאור המוצר. שימו לב כי עליכם להיות זמינים טלפונית ולשים לב להודעת SMS לשם תיאום מועד האספקה. במקרה בו הלקוח אינו זמין טלפונית או ב SMS זמן האספקה יתארך בהתאם.</p>"
+          }
+        },
+        "question_4VbgTD": {
+          "type": "question",
+          "settings": {
+            "question": "<strong>איך אדע מתי השליח מגיע אלי?</strong>",
+            "answer": "<p>חברת השליחויות מעדכנת בהודעת sms על מועד ההגעה הצצפוי של השליח. במקרים מסוימים יתבצע תיאום טלפוני או באמצעות הודעת וואצאפ על ידי צוות פיין לאב</p>"
+          }
+        }
+      },
+      "block_order": [
+        "question_amkxhY",
+        "question_c4UQyk",
+        "question_d3PPJm",
+        "question_4VbgTD"
+      ],
+      "name": "t:sections.faq.presets.faq.name",
+      "settings": {
+        "separate_section_with_border": true,
+        "show_categories": false,
+        "subheading": "צריכים עזרה?",
+        "title": "אספנו שאלות נפוצות",
+        "content": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "related-products",
+    "recently_viewed_products_hcJAbE",
+    "faq_Ycxx6d"
+  ]
+}

@@ -1,0 +1,56 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "custom.overlay",
+  "name": "Overlay group",
+  "sections": {
+    "cart-drawer": {
+      "type": "cart-drawer",
+      "settings": {
+        "show_cart_note": true,
+        "show_shipping_text": true,
+        "show_view_cart_button": true,
+        "show_checkout_button": true,
+        "show_price_in_checkout_button": true
+      }
+    },
+    "newsletter-popup": {
+      "type": "newsletter-popup",
+      "disabled": true,
+      "settings": {
+        "apparition_delay": 5,
+        "show_only_on_index": true,
+        "hide_for_account_holders": true,
+        "show_only_once": true,
+        "title": "הרשמו לניוזלטר שלנו",
+        "content": "הרשמו לניוזלטר שלנו ותהיו ראשונים לדעת על הנחות ומבצעים מיוחדים ותהנו מ 10% הנחה על הרכישה הראשונה שלכם באתר.",
+        "button_text": "הרשמה",
+        "background": "#cdb99d",
+        "text_color": "#ffffff",
+        "button_background": "#ffffff",
+        "button_text_color": "#1c1c1c"
+      }
+    },
+    "privacy-banner": {
+      "type": "privacy-banner",
+      "settings": {
+        "title": "לקוחות יקרים",
+        "content": "<p>בשעה קשה זו משתתפת FINE LAB בצער המשפחות שאיבדו את יקיריהן, מאחלת החלמה מהירה לפצועים ומחזקת את ידי כוחות הביטחון ומשפחות הנעדרים</p><p><strong>סניפינו </strong>פתוחים בפעילות מצומצמת</p><p>ת״א נווה צדק רח שבזי 38 - 10:30-14:30</p><p>הרצליה פיתוח רח המעפילים 39 - 09:30-14:30</p><p>עין ורד רח הצבר -09:30-14:30</p><p>כל האתר ללא מע״מ עם קוד קופון <strong>17FINELAB </strong>בתקווה לבשורות טובות וימים שקטים🤍</p>",
+        "background": "#1c1c1c",
+        "text_color": "#ffffff"
+      }
+    }
+  },
+  "order": [
+    "cart-drawer",
+    "newsletter-popup",
+    "privacy-banner"
+  ]
+}

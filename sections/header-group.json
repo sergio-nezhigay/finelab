@@ -1,0 +1,82 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "header",
+  "name": "Header group",
+  "sections": {
+    "announcement-bar": {
+      "type": "announcement-bar",
+      "blocks": {
+        "message-1": {
+          "type": "message",
+          "disabled": true,
+          "settings": {
+            "text": "<strong>20% הנחה על אהילי תאורה מפשתן לזמן מוגבל</strong>"
+          }
+        },
+        "message_gD7GiB": {
+          "type": "message",
+          "settings": {
+            "text": "<strong>משלוח חינם ברכישה מעל 400 ₪ *לא כולל ריהוט</strong>"
+          }
+        },
+        "message_6Af8aX": {
+          "type": "message",
+          "settings": {
+            "text": "<strong>משלוח מהיר 7-5 ימי עסקים!</strong>"
+          }
+        }
+      },
+      "block_order": [
+        "message-1",
+        "message_gD7GiB",
+        "message_6Af8aX"
+      ],
+      "settings": {
+        "enable_sticky": true,
+        "autoplay": true,
+        "cycle_speed": 3,
+        "desktop_font_size": 12,
+        "mobile_font_size": 13,
+        "background": "#cdb99d",
+        "text_color": "#ffffff"
+      }
+    },
+    "header": {
+      "type": "header",
+      "settings": {
+        "enable_sticky": true,
+        "show_separation_border": true,
+        "reduce_padding": true,
+        "logo": "shopify://shop_images/FineLab_Logo_copy.jpg",
+        "logo_max_width": 70,
+        "logo_mobile_max_width": 50,
+        "menu": "link-list-1",
+        "sidebar_menu": "",
+        "menu_open_trigger": "hover",
+        "enable_search": true,
+        "sidebar_text_font": "heading",
+        "sidebar_show_dividers": false,
+        "layout": "logo_left_navigation_inline",
+        "show_icons": true,
+        "show_country_selector": false,
+        "show_country_name": false,
+        "show_country_flag": false,
+        "show_locale_selector": true,
+        "transparent_header_text_color": "#ffffff",
+        "transparent_logo": "shopify://shop_images/FineLab_Logo.jpg"
+      }
+    }
+  },
+  "order": [
+    "announcement-bar",
+    "header"
+  ]
+}

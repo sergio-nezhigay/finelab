@@ -1,0 +1,152 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "current": {
+    "icon_stroke_width": 1.7,
+    "section_vertical_spacing": "xs",
+    "button_border_radius": 0,
+    "input_border_radius": 0,
+    "text_color": "#1c1c1c",
+    "background": "#ffffff",
+    "secondary_background": "#ffffff",
+    "success_color": "#7a4c07",
+    "error_color": "#cb2b2b",
+    "header_background": "#ffffff",
+    "header_text_color": "#1c1c1c",
+    "footer_background": "#efefef",
+    "footer_text_color": "#1c1c1c",
+    "primary_button_background": "#cdb99d",
+    "primary_button_text_color": "#000000",
+    "modal_background": "#ffffff",
+    "modal_text_color": "#1c1c1c",
+    "product_rating_color": "#1c1c1c",
+    "product_on_sale_accent": "#cdb99d",
+    "product_custom_badge_background": "#cdb99d",
+    "heading_font": "futura_n7",
+    "heading_text_transform": "normal",
+    "heading_font_size_factor": 1.2,
+    "heading_letter_spacing": 16,
+    "text_font": "futura_n4",
+    "text_font_size_mobile": 15,
+    "text_font_size_desktop": 15,
+    "text_font_letter_spacing": 0,
+    "button_text_font": "heading",
+    "button_text_transform": "uppercase",
+    "button_letter_spacing": 18,
+    "currency_code_enabled": false,
+    "show_page_transition": true,
+    "stagger_blog_posts_apparition": true,
+    "round_color_swatches": true,
+    "product_image_aspect_ratio": "square",
+    "show_vendor": false,
+    "product_card_text_font": "body",
+    "product_color_display": "hide",
+    "show_product_rating": true,
+    "show_quick_buy": true,
+    "show_discount": true,
+    "cart_type": "drawer",
+    "cart_icon": "shopping_bag_sharp",
+    "cart_show_free_shipping_bar": true,
+    "cart_free_shipping_threshold": "400",
+    "social_facebook": "https://www.facebook.com/finelabhome",
+    "social_pinterest": "https://www.pinterest.com/finelabhome/",
+    "social_instagram": "https://www.instagram.com/fine_lab/",
+    "social_tiktok": "https://www.tiktok.com/@finelab_home",
+    "social_linkedin": "",
+    "favicon": "shopify://shop_images/FineLab_Logo.jpg",
+    "checkout_accent_color": "#1c1c1c",
+    "checkout_button_color": "#000000",
+    "heading_color": "#1c1c1c",
+    "content_for_index": [],
+    "blocks": {
+      "16963237191767492405": {
+        "type": "shopify://apps/whatsapp-button/blocks/app-embed-block/96d80a63-e860-4262-a001-8b82ac4d00e6",
+        "disabled": false,
+        "settings": {}
+      }
+    }
+  },
+  "presets": {
+    "Allure": {
+      "section_vertical_spacing": "md",
+      "heading_color": "#1c1c1c",
+      "text_color": "#1c1c1c",
+      "background": "#efefef",
+      "secondary_background": "#ffffff",
+      "success_color": "#307a07",
+      "error_color": "#cb2b2b",
+      "header_background": "#ffffff",
+      "header_text_color": "#1c1c1c",
+      "footer_background": "#ffffff",
+      "footer_text_color": "#1c1c1c",
+      "modal_background": "#ffffff",
+      "modal_text_color": "#1c1c1c",
+      "primary_button_background": "#1c1c1c",
+      "primary_button_text_color": "#ffffff",
+      "product_rating_color": "#1c1c1c",
+      "heading_font": "univers_next_n4",
+      "heading_letter_spacing": 18,
+      "text_font": "univers_next_n4",
+      "text_font_size_desktop": 14,
+      "button_letter_spacing": 18
+    },
+    "Couture": {
+      "section_vertical_spacing": "md",
+      "heading_color": "#5c5c5c",
+      "text_color": "#5c5c5c",
+      "background": "#ffffff",
+      "secondary_background": "#ffffff",
+      "success_color": "#307a07",
+      "error_color": "#cb2b2b",
+      "header_background": "#ffffff",
+      "header_text_color": "#303030",
+      "footer_background": "#ffffff",
+      "footer_text_color": "#303030",
+      "modal_background": "#ffffff",
+      "modal_text_color": "#303030",
+      "primary_button_background": "#5c5c5c",
+      "primary_button_text_color": "#ffffff",
+      "product_rating_color": "#1c1c1c",
+      "heading_font": "futura_n4",
+      "heading_letter_spacing": 18,
+      "text_font": "century_gothic_n4",
+      "text_font_size_desktop": 14,
+      "button_letter_spacing": 18
+    },
+    "Vogue": {
+      "section_vertical_spacing": "xs",
+      "heading_color": "#303030",
+      "text_color": "#303030",
+      "background": "#ffffff",
+      "secondary_background": "#ffffff",
+      "success_color": "#307a07",
+      "error_color": "#cb2b2b",
+      "header_background": "#ffffff",
+      "header_text_color": "#303030",
+      "footer_background": "#ffffff",
+      "footer_text_color": "#303030",
+      "modal_background": "#ffffff",
+      "modal_text_color": "#303030",
+      "primary_button_background": "#f5db8b",
+      "primary_button_text_color": "#303030",
+      "product_rating_color": "#1c1c1c",
+      "heading_font": "din_neuzeit_grotesk_n3",
+      "heading_letter_spacing": 18,
+      "text_font": "futura_n4",
+      "text_font_size_desktop": 14,
+      "button_letter_spacing": 18
+    }
+  },
+  "platform_customizations": {
+    "custom_css": [
+      "@media screen and (min-width: 750px) {.collection-hero__description {max-width: 100% !important; text-align: center; }}"
+    ]
+  }
+}

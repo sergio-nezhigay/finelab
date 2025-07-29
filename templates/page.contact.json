@@ -1,0 +1,55 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "show_title": true,
+        "page_width": "xs"
+      }
+    },
+    "rich_text_yFxFxh": {
+      "type": "rich-text",
+      "blocks": {
+        "richtext_LtNghm": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>שירות לקוחות: טלפון 054-3505858<br/>שירות הלקוחות שלנו זמין בימים א׳-ה׳ בשעות 09:00- 18:00<br/><br/><a href=\"https://www.google.co.il/maps/place/%D7%A9%D7%91%D7%96%D7%99+38,+%D7%AA%D7%9C+%D7%90%D7%91%D7%99%D7%91+%D7%99%D7%A4%D7%95%E2%80%AD/@32.0625849,34.7659555,16z/data=!4m2!3m1!1s0x151d4c9bb3099cd5:0x416a598ec494533d?hl=iw\" target=\"_blank\" title=\"שבזי 38 תל אביב\"><span style=\"text-decoration:underline\">שבזי 42, נווה צדק, תל-אביב | Shabazi 42 Neve Tzedek, TLV<br/></span></a>א׳- ה 10:00-18:00 -  Sun- Thu<br/>שישי 09:30-15:00 Friday<br/><br/><a href=\"https://www.google.co.il/maps/place/%D7%94%D7%A6%D7%91%D7%A8,+%D7%A2%D7%99%D7%9F+%D7%95%D7%A8%D7%93%E2%80%AD/@32.2666393,34.93752,17z/data=!3m1!4b1!4m5!3m4!1s0x151d3e63f46e3e83:0xcc134dfd5addcb51!8m2!3d32.2666348!4d34.9353313?hl=iw\" title=\"EIN VERED\"><span style=\"text-decoration:underline\">רחוב הצבר, עין-ורד | Hatsabar st. Ein-Vered<br/></span></a>א׳- ה 09:30-17:00 Sun- Thu<br/>שישי 09:30-14:00 -  Friday</p>"
+          }
+        }
+      },
+      "block_order": [
+        "richtext_LtNghm"
+      ],
+      "settings": {
+        "separate_section_with_border": true,
+        "content_width": "sm",
+        "text_position": "center",
+        "remove_vertical_spacing": false
+      }
+    },
+    "contact-form": {
+      "type": "contact",
+      "settings": {
+        "separate_section_with_border": true,
+        "subheading": "",
+        "title": "Contact",
+        "content": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_yFxFxh",
+    "contact-form"
+  ]
+}
