@@ -439,12 +439,45 @@
               {%- endif -%}
             {%- endif -%}
 
-         {%- when 'features_block' -%}
-            {%- if block.settings.text != blank -%}
-              <div class="features-block">
-                {{ block.settings.text }}
+
+{%- when 'features_block' -%}
+  {%- assign has_features = false -%}
+
+  {%- comment -%}Check if at least one feature has content{%- endcomment -%}
+  {%- for i in (1..4) -%}
+    {%- assign feature_text_key = 'feature_' | append: i | append: '_text' -%}
+    {%- assign feature_text = block.settings[feature_text_key] -%}
+    {%- if feature_text != blank -%}
+      {%- assign has_features = true -%}
+      {%- break -%}
+    {%- endif -%}
+  {%- endfor -%}
+
+  {%- if has_features -%}
+    <div class="features-block" {{ block.shopify_attributes }}>
+      <div class="features-block__container">
+        {%- for i in (1..4) -%}
+          {%- assign feature_text_key = 'feature_' | append: i | append: '_text' -%}
+          {%- assign feature_icon_key = 'feature_' | append: i | append: '_icon' -%}
+          {%- assign feature_text = block.settings[feature_text_key] -%}
+          {%- assign feature_icon = block.settings[feature_icon_key] -%}
+
+          {%- if feature_text != blank -%}
+            <div class="features-block__item">
+              {%- if feature_icon != 'none' and feature_icon != blank -%}
+                <div class="features-block__icon">
+                  {%- render 'icon', icon: feature_icon -%}
+                </div>
+              {%- endif -%}
+              <div class="features-block__text">
+                <p>{{ feature_text }}</p>
               </div>
-        {%- endif -%}
+            </div>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    </div>
+  {%- endif -%}
 
         {%- when 'liquid' -%}
             {%- if block.settings.liquid != blank -%}
