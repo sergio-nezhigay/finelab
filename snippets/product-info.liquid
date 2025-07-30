@@ -552,16 +552,33 @@
           {%- assign feature_icon = block.settings[feature_icon_key] -%}
 
           {%- if feature_text != blank -%}
-            <div class="features-block__item">
-              {%- if feature_icon != 'none' and feature_icon != blank -%}
-                <div class="features-block__icon">
-                  {%- render 'icon', icon: feature_icon -%}
-                </div>
+            {%- comment -%}Check if this is the free shipping feature{%- endcomment -%}
+            {%- assign is_free_shipping = false -%}
+            {%- if feature_text contains 'free shipping' or feature_text contains 'Free Shipping' or feature_text contains 'משלוח חינם' -%}
+              {%- assign is_free_shipping = true -%}
+            {%- endif -%}
+
+            {%- comment -%}Show free shipping only if conditions are met{%- endcomment -%}
+            {%- assign show_feature = true -%}
+            {%- if is_free_shipping -%}
+              {%- assign product_price = product.selected_or_first_available_variant.price | default: product.price -%}
+              {%- if product_price < 40000 or product.tags contains 'no-free-shipping' -%}
+                {%- assign show_feature = false -%}
               {%- endif -%}
-              <div class="features-block__text">
-                <p>{{ feature_text }}</p>
+            {%- endif -%}
+
+            {%- if show_feature -%}
+              <div class="features-block__item">
+                {%- if feature_icon != 'none' and feature_icon != blank -%}
+                  <div class="features-block__icon">
+                    {%- render 'icon', icon: feature_icon -%}
+                  </div>
+                {%- endif -%}
+                <div class="features-block__text">
+                  <p>{{ feature_text }}</p>
+                </div>
               </div>
-            </div>
+            {%- endif -%}
           {%- endif -%}
         {%- endfor -%}
       </div>
