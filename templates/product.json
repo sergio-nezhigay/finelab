@@ -61,6 +61,18 @@
             "payment_button_text_color": ""
           }
         },
+        "features_block_PNLibG": {
+          "type": "features_block",
+          "settings": {
+            "feature_1_text": "משלוח מהיר 5-7 ימי עסקים",
+            "feature_1_icon": "shopify://shop_images/Trolley.png",
+            "feature_2_text": "משל11וח חינם",
+            "feature_2_icon": "shopify://shop_images/Free_Shipping_b4257006-4a6a-4a8e-a11e-8fbaf2551ae6.png",
+            "feature_3_text": "החזרות/החלפות- עד 14 ימי עסקים",
+            "feature_3_icon": "shopify://shop_images/Frame_3.png",
+            "feature_4_text": ""
+          }
+        },
         "feature_with_icon_FMm7QD": {
           "type": "feature_with_icon",
           "settings": {
@@ -147,6 +159,7 @@
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
+        "features_block_PNLibG",
         "feature_with_icon_FMm7QD",
         "feature_with_icon_zbxVM4",
         "feature_with_icon_wNiRiB",

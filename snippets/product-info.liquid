@@ -569,9 +569,9 @@
 
             {%- if show_feature -%}
               <div class="features-block__item">
-                {%- if feature_icon != 'none' and feature_icon != blank -%}
+                {%- if feature_icon != blank -%}
                   <div class="features-block__icon">
-                    {%- render 'icon', icon: feature_icon -%}
+                    {{ feature_icon | image_url: width: 60 | image_tag: loading: 'lazy', class: 'constrained-image', style: 'max-width:60px;max-height:60px;' }}
                   </div>
                 {%- endif -%}
                 <div class="features-block__text">
