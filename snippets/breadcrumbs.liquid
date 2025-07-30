@@ -5,8 +5,7 @@
         <li><a href="{{ routes.root_url }}">דף הבית</a></li>
 
         {%- if request.page_type == 'collection' and collection.handle != blank -%}
-
-         {%- assign hierarchy = '
+          {%- assign hierarchy = '
   bags:לייף סטייל|,
   babies:חדר שינה|,
   lighting:חלל מגורים|,
@@ -58,8 +57,9 @@
   serving-and-hosting:שולחן ואירוח|,
   sofa-and-bed-covers:שמיכות ציפות וכיסויי מיטה|חדר שינה,
   chairs:ריהוט פנים|חלל מגורים
-' | split: ',' -%}
-
+'
+            | split: ','
+          -%}
 
           {%- assign current_handle = collection.handle -%}
           {%- assign level1 = '' -%}
@@ -80,32 +80,48 @@
 
           {%- if level2 != blank -%}
             <li>/</li>
-            <li><a href="/collections/{{ level2 | handleize }}">{{ level2 }}</a></li>
+            <li>
+              <a href="/collections/{{ level2 | handleize }}">{{ level2 }}</a>
+            </li>
           {%- endif -%}
           {%- if level1 != blank -%}
             <li>/</li>
-            <li><a href="/collections/{{ level1 | handleize }}">{{ level1 }}</a></li>
+            <li>
+              <a href="/collections/{{ level1 | handleize }}">{{ level1 }}</a>
+            </li>
           {%- endif -%}
 
           <li>/</li>
-          <li><span>{{ collection.title }}</span></li>
+          <li>
+            <span>{{ collection.title }}</span>
+          </li>
 
         {%- elsif request.page_type == 'product' and product.handle != blank -%}
           {%- if collection and collection.title != blank -%}
             <li>/</li>
-            <li><a href="{{ collection.url }}">{{ collection.title }}</a></li>
+            <li>
+              <a href="{{ collection.url }}">{{ collection.title }}</a>
+            </li>
           {%- endif -%}
           <li>/</li>
-          <li><span>{{ product.title }}</span></li>
-{%- elsif request.page_type == 'article' and article.handle != blank -%}
-  <li>/</li>
-  <li><a href="{{ blog.url }}">{{ blog.title }}</a></li>
-  <li>/</li>
-  <li><span>{{ article.title }}</span></li>
+          <li>
+            <span>{{ product.title }}</span>
+          </li>
+        {%- elsif request.page_type == 'article' and article.handle != blank -%}
+          <li>/</li>
+          <li>
+            <a href="{{ blog.url }}">{{ blog.title }}</a>
+          </li>
+          <li>/</li>
+          <li>
+            <span>{{ article.title }}</span>
+          </li>
 
         {%- elsif request.page_type == 'page' and page.handle != blank -%}
           <li>/</li>
-          <li><span>{{ page.title }}</span></li>
+          <li>
+            <span>{{ page.title }}</span>
+          </li>
         {%- endif -%}
       </ul>
     </nav>
