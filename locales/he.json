@@ -92,7 +92,7 @@
   "product": {
     "general": {
       "description": "תיאור",
-      "add_to_cart_button": "הוסף לעגלה",
+      "add_to_cart_button": "הוספה לסל",
       "pre_order_button": "הזמן מראש",
       "sold_out_button": "אזל מהמלאי",
       "unavailable_button": "לא זמין",

@@ -66,50 +66,11 @@
           "settings": {
             "feature_1_text": "משלוח מהיר 5-7 ימי עסקים",
             "feature_1_icon": "shopify://shop_images/Trolley.png",
-            "feature_2_text": "משל11וח חינם",
+            "feature_2_text": "",
             "feature_2_icon": "shopify://shop_images/Free_Shipping_b4257006-4a6a-4a8e-a11e-8fbaf2551ae6.png",
-            "feature_3_text": "החזרות/החלפות- עד 14 ימי עסקים",
+            "feature_3_text": "החלפה/החזרה עד 14 יום",
             "feature_3_icon": "shopify://shop_images/Frame_3.png",
             "feature_4_text": ""
-          }
-        },
-        "feature_with_icon_FMm7QD": {
-          "type": "feature_with_icon",
-          "settings": {
-            "text": "משלוח מהיר 5-7 ימי עסקים",
-            "link": "",
-            "icon": "none",
-            "custom_icon": "shopify://shop_images/Trolley.png",
-            "icon_width": 32,
-            "background": "#ffffff",
-            "text_color": "#1c1c1c",
-            "border_color": ""
-          }
-        },
-        "feature_with_icon_zbxVM4": {
-          "type": "feature_with_icon",
-          "settings": {
-            "text": "משלוח חינם",
-            "link": "",
-            "icon": "none",
-            "custom_icon": "shopify://shop_images/Free_Shipping.png",
-            "icon_width": 32,
-            "background": "#ffffff",
-            "text_color": "#1c1c1c",
-            "border_color": ""
-          }
-        },
-        "feature_with_icon_wNiRiB": {
-          "type": "feature_with_icon",
-          "settings": {
-            "text": "החזרות/החלפות- עד 14 ימי עסקים",
-            "link": "",
-            "icon": "none",
-            "custom_icon": "shopify://shop_images/Frame_3.png",
-            "icon_width": 32,
-            "background": "#ffffff",
-            "text_color": "#1c1c1c",
-            "border_color": ""
           }
         },
         "description": {
@@ -119,23 +80,23 @@
             "show_below_gallery": false
           }
         },
-        "accordion_CWY3rf": {
-          "type": "accordion",
-          "settings": {
-            "show_below_gallery": false,
-            "icon": "none",
-            "title": "תנאי משלוחים והחזרות",
-            "content": "<p>Share some content to your customers about your products.</p>",
-            "page": ""
-          }
-        },
         "accordion_DfEVfq": {
           "type": "accordion",
           "settings": {
             "show_below_gallery": false,
             "icon": "none",
-            "title": "איסוף עצמי",
-            "content": "<p><strong>מושב עין ורד (ליד אבן יהודה) - רחוב הצברראשון - חמישי 09:30-17:30 | שישי 9:30-14:30<br/><br/>מושב עין ורד (ליד אבן יהודה) - רחוב הצברראשון - חמישי 09:30-17:30 | שישי 9:30-14:30</strong></p>",
+            "title": "משלוח / איסוף עצמי",
+            "content": "<ul><li>ההזמנות נשלחות ע\"י חברת שליחויות עם שליח עד הבית בתוך 5-7 ימי עסקים.</li><li>עלות המשלוח הינה 40 ₪ או עלות נוספת/אחרת כפי שמצוין בדף המוצר ו/או לאחר הוספת המוצר לעגלה.</li><li><strong>בהזמנה מעל 400 ₪ המשלוח חינם</strong>* למעט ריהוט ו/או פריטים חריגים בגודלם. יש לשים לב למה שמצוין בתיאור הפריט בדף המוצר.</li><li><strong>איסוף עצמי</strong>- ניתן לאסוף את ההזמנה מאחת <a href=\"/pages/locations\" target=\"_blank\" title=\"חנויות | Locations\">החנויות שלנו</a>. בעת תהליך ההזמנה, יש לבחור את שיטת המשלוח: איסוף עצמי מהחנות.<br/>בעת בחירה באיסוף עצמי, <strong>לא ייגבו דמי משלוח.</strong><br/><br/><strong>חשוב! לפני הגעה לחנות לאיסוף יש לבצע תיאום בטלפון </strong>054-3505858 או בוואצאפ באמצעות הקישור&gt; <a href=\"https://bit.ly/3Fm92ow.\" target=\"_blank\" title=\"שירות לקוחות בוואצאפ\">https://bit.ly/3Fm92ow</a></li></ul>",
+            "page": ""
+          }
+        },
+        "accordion_CWY3rf": {
+          "type": "accordion",
+          "settings": {
+            "show_below_gallery": false,
+            "icon": "none",
+            "title": "החלפות והחזרות",
+            "content": "<ul><li>החלפות והחזרות עד 14 יום מיום קבלת המוצר/ מועד האיסוף העצמי.</li><li>יתקבל רק מוצר שלא נעשה בו שימוש, לא ניזוק ולא כובס, באריזתו המקורית, עם התווית ובצרוף חשבונית הקנייה.</li><li>יש להחזיר את המוצר פיזית לחנות בעין ורד או באמצעות שליחות, את תיאום השליחות לאיסוף המוצר אנו נעשה עבורכם (<a href=\"/pages/צור-קשר\" target=\"_blank\" title=\"צור קשר\">צרו איתנו קשר</a> לצורך התיאום).</li><li><strong>עלות המשלוח בעת החזרה/ החלפה- חלה על הלקוח</strong>.</li><li><strong>שימו לב: לא ניתן לבצע החלפה ו/או החזרה של פריטי צמחייה, מבשמים ומפיצי ריח מכל סוג<br/>וללא יוצא מן הכלל</strong>. זוהי מדיניות קבועה הנובעת מאופי המוצרים ורגישותם.</li><li>לא ניתן להחזיר מוצר שהוכתם גם אם טרם עברו 14 יום ממועד קבלת המוצר. החברה אינה נושאת באחריות על כתמים שנוצרים בעקבות שימוש בחומרים פעילים כגון קרמים, צבע או חומרים מלבינים.<br/><br/><a href=\"/pages/משלוחים-והחזרות\" target=\"_blank\" title=\"משלוחים החלפות והחזרות\">למידע נוסף ליחצו כאן</a></li></ul>",
             "page": ""
           }
         },
@@ -160,12 +121,9 @@
         "quantity_selector",
         "buy_buttons",
         "features_block_PNLibG",
-        "feature_with_icon_FMm7QD",
-        "feature_with_icon_zbxVM4",
-        "feature_with_icon_wNiRiB",
         "description",
-        "accordion_CWY3rf",
         "accordion_DfEVfq",
+        "accordion_CWY3rf",
         "complementary_products"
       ],
       "settings": {
@@ -194,7 +152,7 @@
         "horizontal_spacing_factor": 1,
         "vertical_spacing_factor": 1,
         "subheading": "",
-        "title": "מוצרים נוספים שיכולים לעניין אותך",
+        "title": "מוצרים נוספים שאולי תאהבו",
         "content": ""
       }
     },
@@ -211,7 +169,7 @@
         "horizontal_spacing_factor": 1,
         "vertical_spacing_factor": 1,
         "subheading": "",
-        "title": "Recently viewed products",
+        "title": "מוצרים שנצפו לאחרונה",
         "content": ""
       }
     },
@@ -222,7 +180,7 @@
           "type": "question",
           "settings": {
             "question": "<strong>האם ניתן לבצע הזמנה טלפונית?</strong>",
-            "answer": "<p>כן ניתן לבצע הזמנה טלפונית בימים ראשון עד חמישי בין השעות 10:00 ועד 15:00, בטלפון מספר 054-3505858</p>"
+            "answer": "<p>כן, ניתן לבצע הזמנה טלפונית בימים ראשון עד חמישי בין השעות 10:00 ועד 15:00<br/>התקשרו אלינו 054-3505858</p>"
           }
         },
         "question_c4UQyk": {
@@ -243,7 +201,7 @@
           "type": "question",
           "settings": {
             "question": "<strong>איך אדע מתי השליח מגיע אלי?</strong>",
-            "answer": "<p>חברת השליחויות מעדכנת בהודעת sms על מועד ההגעה הצצפוי של השליח. במקרים מסוימים יתבצע תיאום טלפוני או באמצעות הודעת וואצאפ על ידי צוות פיין לאב</p>"
+            "answer": "<p>חברת השליחויות מעדכנת בהודעת sms על מועד ההגעה הצפוי של השליח. במקרים מסוימים יתבצע תיאום טלפוני או באמצעות הודעת וואצאפ על ידי צוות פיין לאב</p>"
           }
         }
       },
@@ -257,8 +215,8 @@
       "settings": {
         "separate_section_with_border": true,
         "show_categories": false,
-        "subheading": "צריכים עזרה?",
-        "title": "אספנו שאלות נפוצות",
+        "subheading": "",
+        "title": "שאלות נפוצות",
         "content": ""
       }
     }
