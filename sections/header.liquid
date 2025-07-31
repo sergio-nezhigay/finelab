@@ -180,23 +180,20 @@
 
                                     if sub_link.image
                                       assign menu_image = sub_link.image
-                                    elsif sub_link.type == 'collection_link' and sub_link.object and sub_link.object.handle
-                                      assign target_collection = collections[sub_link.object.handle]
-                                      if target_collection and target_collection.featured_image
-                                        assign menu_image = target_collection.featured_image
-                                        assign image_alt = target_collection.featured_image.alt | default: target_collection.title
-                                      endif
-                                    elsif sub_link.url contains '/collections/'
-                                      assign collection_handle = sub_link.url | split: '/collections/' | last | split: '/' | first
+                                    elsif sub_link.type == 'collection_link' and sub_link.object.image
+                                      assign menu_image = sub_link.object.image
+                                      assign image_alt = sub_link.object.image.alt | default: sub_link.object.title
+                                    elsif sub_link.url contains '/collections/' and collections[sub_link.url].image
+                                      assign collection_handle = sub_link.url | remove: '/collections/' | split: '/' | first
                                       assign target_collection = collections[collection_handle]
-                                      if target_collection and target_collection.featured_image
-                                        assign menu_image = target_collection.featured_image
-                                        assign image_alt = target_collection.featured_image.alt | default: target_collection.title
+                                      if target_collection.image
+                                        assign menu_image = target_collection.image
+                                        assign image_alt = target_collection.image.alt | default: target_collection.title
                                       endif
                                     endif
                                   -%}
 
-                                  {%- if section.settings.show_menu_images and menu_image -%}
+                                  {%- if section.settings.show_menu_images and menu_image and menu_image.src -%}
                                     <span class="square">
                                       <img
                                         src="{{ menu_image | image_url: width: section.settings.menu_image_size }}"
@@ -234,30 +231,30 @@
                                           aria-current="page"
                                         {% endif %}
                                       >
-                                        <span class="image-menu-item">
-                                          {%- liquid
-                                            assign nested_menu_image = null
-                                            assign nested_image_alt = sub_sub_link.title
+                                        {%- liquid
+                                          assign nested_menu_image = null
+                                          assign nested_image_alt = sub_sub_link.title
 
-                                            if sub_sub_link.image
-                                              assign nested_menu_image = sub_sub_link.image
-                                            elsif sub_sub_link.type == 'collection_link' and sub_sub_link.object and sub_sub_link.object.handle
-                                              assign target_nested_collection = collections[sub_sub_link.object.handle]
-                                              if target_nested_collection and target_nested_collection.featured_image
-                                                assign nested_menu_image = target_nested_collection.featured_image
-                                                assign nested_image_alt = target_nested_collection.featured_image.alt | default: target_nested_collection.title
-                                              endif
-                                            elsif sub_sub_link.url contains '/collections/'
-                                              assign nested_collection_handle = sub_sub_link.url | split: '/collections/' | last | split: '/' | first
-                                              assign target_nested_collection = collections[nested_collection_handle]
-                                              if target_nested_collection and target_nested_collection.featured_image
-                                                assign nested_menu_image = target_nested_collection.featured_image
-                                                assign nested_image_alt = target_nested_collection.featured_image.alt | default: target_nested_collection.title
-                                              endif
+                                          if sub_sub_link.image
+                                            assign nested_menu_image = sub_sub_link.image
+                                          elsif sub_sub_link.type == 'collection_link' and sub_sub_link.object.image
+                                            assign nested_menu_image = sub_sub_link.object.image
+                                            assign nested_image_alt = sub_sub_link.object.image.alt | default: sub_sub_link.object.title
+                                          elsif sub_sub_link.url contains '/collections/'
+                                            assign collection_handle = sub_sub_link.url | remove: '/collections/' | split: '/' | first
+                                            assign target_collection = collections[collection_handle]
+                                            if target_collection and target_collection.image
+                                              assign nested_menu_image = target_collection.image
+                                              assign nested_image_alt = target_collection.image.alt | default: target_collection.title
                                             endif
-                                          -%}
+                                          endif
+                                        -%}
 
-                                          {%- if section.settings.show_menu_images and nested_menu_image -%}
+                                        {%- if section.settings.show_menu_images
+                                          and nested_menu_image
+                                          and nested_menu_image.src
+                                        -%}
+                                          <span class="image-menu-item">
                                             <span class="square">
                                               <img
                                                 src="{{ nested_menu_image | image_url: width: section.settings.menu_image_size }}"
@@ -265,11 +262,16 @@
                                                 width="{{ section.settings.menu_image_size }}"
                                                 height="{{ section.settings.menu_image_size }}"
                                                 style="display:block;object-fit:cover;width:{{ section.settings.menu_image_size }}px;height:{{ section.settings.menu_image_size }}px;"
-                                            ></span>
-                                          {%- endif -%}
-
-                                          {{- sub_sub_link.title -}}
-                                        </span>
+                                                loading="lazy"
+                                              >
+                                            </span>
+                                            {{ sub_sub_link.title }}
+                                          </span>
+                                        {%- else -%}
+                                          <span class="text-menu-item">
+                                            {{ sub_sub_link.title }}
+                                          </span>
+                                        {%- endif -%}
                                       </a>
                                     </li>
                                   {%- endfor -%}
