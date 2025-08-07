@@ -73,6 +73,28 @@
             "feature_4_text": ""
           }
         },
+        "loox_reviews_loox_snippets_widget_WyWfgg": {
+          "type": "shopify://apps/loox-reviews/blocks/loox-snippets-widget/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
+          "settings": {
+            "alignment": "left",
+            "max-width": "",
+            "color-scheme": "default",
+            "shadow": "",
+            "show-rating": true,
+            "show-image": true,
+            "hide-arrows-mobile": false,
+            "font-size": 14,
+            "show-border": false,
+            "border-radius": 16,
+            "background-color": "",
+            "text-color": "",
+            "name-color": "",
+            "rating-icon-color": "",
+            "border-color": "",
+            "shadow-color": "",
+            "reviews-limit": 10
+          }
+        },
         "description": {
           "type": "description",
           "settings": {
@@ -121,6 +143,7 @@
         "quantity_selector",
         "buy_buttons",
         "features_block_PNLibG",
+        "loox_reviews_loox_snippets_widget_WyWfgg",
         "description",
         "accordion_DfEVfq",
         "accordion_CWY3rf",
@@ -219,12 +242,37 @@
         "title": "שאלות נפוצות",
         "content": ""
       }
+    },
+    "1753960822fb821113": {
+      "type": "apps",
+      "blocks": {
+        "loox_reviews_loox_dynamic_section_mp6dpx": {
+          "type": "shopify://apps/loox-reviews/blocks/loox-dynamic-section/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
+          "settings": {
+            "only_photos": false,
+            "aggregated": false,
+            "limit": 20,
+            "hide_thumbnails": false,
+            "maxwidth": 1080,
+            "is_sample": true
+          }
+        }
+      },
+      "block_order": [
+        "loox_reviews_loox_dynamic_section_mp6dpx"
+      ],
+      "settings": {
+        "separate_section_with_border": true,
+        "remove_vertical_spacing": false,
+        "remove_horizontal_spacing": false
+      }
     }
   },
   "order": [
     "main",
     "related-products",
     "recently_viewed_products_hcJAbE",
-    "faq_Ycxx6d"
+    "faq_Ycxx6d",
+    "1753960822fb821113"
   ]
 }
