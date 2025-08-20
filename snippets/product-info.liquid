@@ -547,13 +547,13 @@
           {%- assign feature_icon = block.settings[feature_icon_key] -%}
 
           {%- if feature_text != blank -%}
-            {%- comment -%}Check if this is the free shipping feature{%- endcomment -%}
+
             {%- assign is_free_shipping = false -%}
             {%- if feature_text contains 'free shipping' or feature_text contains 'Free Shipping' or feature_text contains 'משלוח חינם' -%}
               {%- assign is_free_shipping = true -%}
             {%- endif -%}
 
-            {%- comment -%}Show free shipping only if conditions are met{%- endcomment -%}
+
             {%- assign show_feature = true -%}
             {%- if is_free_shipping -%}
               {%- assign product_price = product.selected_or_first_available_variant.price | default: product.price -%}
