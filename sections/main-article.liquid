@@ -29,6 +29,9 @@
   details[open] summary::after {
     content: "−";
   }
+  .shopify-section--header summary::after {
+    display: none !important;
+  }
 
   details p {
     margin-top: 0.5rem;
@@ -172,7 +175,7 @@
 
       {%- if section.settings.show_author or section.settings.show_share_buttons -%}
         <div class="article__footer">
-        
+
           {%- if section.settings.show_share_buttons -%}
             {%- render 'share-buttons', layout: 'block', url: article.url, title: article.title, description: article.content -%}
           {%- endif -%}

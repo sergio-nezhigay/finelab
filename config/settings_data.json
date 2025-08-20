@@ -151,7 +151,8 @@
   },
   "platform_customizations": {
     "custom_css": [
-      "@media screen and (min-width: 750px) {.collection-hero__description {max-width: 100% !important; text-align: center; }}"
+      "@media screen and (min-width: 750px) {.collection-hero__description {max-width: 100% !important; text-align: center; }}",
+      "@media screen and (min-width: 768px) {.article__image img.w-full {max-width: 950px !important; width: 100% !important; height: auto !important; aspect-ratio: 1 / 1 !important; object-fit: cover !important; margin: 0 auto !important; display: block !important; }}"
     ]
   }
 }

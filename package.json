@@ -1,0 +1,23 @@
+{
+  "name": "finelab",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "shopify theme dev --store=fine-lab-home.myshopify.com --theme 143488286896",
+    "push": "shopify theme push --store=fine-lab-home.myshopify.com --theme 143488286896",
+    "pull": "shopify theme pull --store=fine-lab-home.myshopify.com --theme 143488286896"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sergio-nezhigay/finelab.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sergio-nezhigay/finelab/issues"
+  },
+  "homepage": "https://github.com/sergio-nezhigay/finelab#readme",
+  "description": ""
+}
