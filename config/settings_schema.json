@@ -632,6 +632,12 @@
           }
         ],
         "default": "saving"
+      },
+      {
+        "type": "number",
+        "id": "minimal_sum_to_hide",
+        "label": "Minimal sum to hide the product feature",
+        "default": 400
       }
     ]
   },

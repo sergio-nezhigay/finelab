@@ -557,7 +557,9 @@
             {%- assign show_feature = true -%}
             {%- if is_free_shipping -%}
               {%- assign product_price = product.selected_or_first_available_variant.price | default: product.price -%}
-              {%- if product_price < 40000 or product.tags contains 'no-free-shipping' -%}
+              {%- assign minimal_sum_to_hide = settings.minimal_sum_to_hide | default: 400 -%}
+              {%- assign minimal_sum_to_hide_cents = minimal_sum_to_hide | times: 100 -%}
+              {%- if product_price < minimal_sum_to_hide_cents or product.tags contains 'no-free-shipping' -%}
                 {%- assign show_feature = false -%}
               {%- endif -%}
             {%- endif -%}

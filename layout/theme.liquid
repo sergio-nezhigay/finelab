@@ -5,9 +5,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, height=device-height, minimum-scale=1.0, maximum-scale=5.0">
 
-    <meta name="google-site-verification" content="E5U9Zvsal8TX5Um8Un_ffOoXe3_lkC4A0RZpjxoGxJc" />
+    <meta name="google-site-verification" content="E5U9Zvsal8TX5Um8Un_ffOoXe3_lkC4A0RZpjxoGxJc">
 
-    <title>{% if page_title == blank %}{{ shop.name }}{% else %}{{ page_title }}{% if current_page != 1 %} &ndash; {{ 'general.page' | t: page: current_page }}{% endif %}{% endif %}</title>
+    <title>
+      {% if page_title == blank -%}
+        {{- shop.name -}}
+      {%- else -%}
+        {{- page_title -}}
+        {%- if current_page != 1 %} &ndash; {{ 'general.page' | t: page: current_page }}{% endif -%}
+      {%- endif %}
+    </title>
 
     {%- if page_description -%}
       <meta name="description" content="{{ page_description | escape }}">
@@ -61,12 +68,19 @@
 
     {{- 'theme.css' | asset_url | stylesheet_tag: preload: true -}}
     <script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "q57o041egt");
-</script>
+      (function (c, l, a, r, i, t, y) {
+        c[a] =
+          c[a] ||
+          function () {
+            (c[a].q = c[a].q || []).push(arguments);
+          };
+        t = l.createElement(r);
+        t.async = 1;
+        t.src = 'https://www.clarity.ms/tag/' + i;
+        y = l.getElementsByTagName(r)[0];
+        y.parentNode.insertBefore(t, y);
+      })(window, document, 'clarity', 'script', 'q57o041egt');
+    </script>
   </head>
 
   {% liquid
@@ -89,7 +103,9 @@
     {%- render 'shadow-dom-templates' -%}
 
     <loading-bar class="loading-bar" aria-hidden="true"></loading-bar>
-    <a href="#main" allow-hash-change class="skip-to-content sr-only">{{ 'general.accessibility.skip_to_content' | t }}</a>
+    <a href="#main" allow-hash-change class="skip-to-content sr-only">
+      {{- 'general.accessibility.skip_to_content' | t -}}
+    </a>
 
     {%- if request.page_type != 'password' -%}
       {%- sections 'header-group' -%}
@@ -104,64 +120,63 @@
       {%- sections 'footer-group' -%}
     {%- endif -%}
 
-<style>
-@media screen and (min-width: 768px) {
-.rte.rte--header {
-    display: flex !important;
-    flex-flow: row-reverse !important;
-    gap: 2rem !important;
-}
-}
-  .header__primary-nav-item details {
-  border-bottom: 0;
-  padding: 0;
-    font-family: inherit;
-}
-  .header__primary-nav-item summary {
-    padding-right:0;
-  }
-  .header__primary-nav-item .header__dropdown-menu summary{
-    padding: .375rem 1.5625rem;
-    font-weight:normal
-  }
-  
-  .header__primary-nav-item summary::before{
-    display:none
-  }
+    <style>
+      @media screen and (min-width: 768px) {
+        .rte.rte--header {
+          display: flex !important;
+          flex-flow: row-reverse !important;
+          gap: 2rem !important;
+        }
+      }
+      .header__primary-nav-item details {
+        border-bottom: 0;
+        padding: 0;
+        font-family: inherit;
+      }
+      .header__primary-nav-item summary {
+        padding-right: 0;
+      }
+      .header__primary-nav-item .header__dropdown-menu summary {
+        padding: 0.375rem 1.5625rem;
+        font-weight: normal;
+      }
 
-  .announcement-bar p.heading {
-    margin:0;
-  }
+      .header__primary-nav-item summary::before {
+        display: none;
+      }
 
-  .reviews-widget-wrapper {
-    position: fixed;
-    bottom: -5px;
-    right: 0;
-    z-index: 9999;
-  }
+      .announcement-bar p.heading {
+        margin: 0;
+      }
 
-  .reviews-close-button {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    width: 30px;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 26px;
-    padding: 0;
-    z-index: 10;
-  }
+      .reviews-widget-wrapper {
+        position: fixed;
+        bottom: -5px;
+        right: 0;
+        z-index: 9999;
+      }
 
-  .reviews-widget-wrapper .hcRpoh {
-    box-shadow: 0 0 10px 1px rgba(0, 0, 0, .05);
-  }
+      .reviews-close-button {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 26px;
+        padding: 0;
+        z-index: 10;
+      }
 
-  .gty-wacb-wrapper {
-    right:inherit;
-  }
+      .reviews-widget-wrapper .hcRpoh {
+        box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.05);
+      }
 
+      .gty-wacb-wrapper {
+        right: inherit;
+      }
     </style>
     <div class="reviews-widget-wrapper" id="google-widget-wrapper">
       <div class="elfsight-sapp-515f48b8-9ead-4c93-8b28-a834949c5418"></div>
@@ -169,14 +184,14 @@
     </div>
 
     <script>
-      if (localStorage.getItem("googleReviewClosed") === "true") {
-      document.getElementById("google-widget-wrapper").style.display = "none";
-    }
-  
-    document.getElementById("reviews-widget-close").addEventListener("click", function () {
-      document.getElementById("google-widget-wrapper").style.display = "none";
-      localStorage.setItem("googleReviewClosed", "true");
-    });
-  </script>
+      if (localStorage.getItem('googleReviewClosed') === 'true') {
+        document.getElementById('google-widget-wrapper').style.display = 'none';
+      }
+
+      document.getElementById('reviews-widget-close').addEventListener('click', function () {
+        document.getElementById('google-widget-wrapper').style.display = 'none';
+        localStorage.setItem('googleReviewClosed', 'true');
+      });
+    </script>
   </body>
 </html>
