@@ -4,9 +4,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "shopify theme dev --store=fine-lab-home.myshopify.com --theme 143488286896",
-    "push": "shopify theme push --store=fine-lab-home.myshopify.com --theme 143488286896",
-    "pull": "shopify theme pull --store=fine-lab-home.myshopify.com --theme 143488286896"
+    "dev": "shopify theme dev --store=fine-lab-home.myshopify.com --theme 143704621232",
+    "push": "shopify theme push --store=fine-lab-home.myshopify.com --theme 143704621232",
+    "pull": "shopify theme pull --store=fine-lab-home.myshopify.com --theme 143704621232"
   },
   "repository": {
     "type": "git",

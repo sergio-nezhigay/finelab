@@ -40,6 +40,7 @@
     },
     "privacy-banner": {
       "type": "privacy-banner",
+      "disabled": true,
       "settings": {
         "title": "לקוחות יקרים",
         "content": "<p>בשעה קשה זו משתתפת FINE LAB בצער המשפחות שאיבדו את יקיריהן, מאחלת החלמה מהירה לפצועים ומחזקת את ידי כוחות הביטחון ומשפחות הנעדרים</p><p><strong>סניפינו </strong>פתוחים בפעילות מצומצמת</p><p>ת״א נווה צדק רח שבזי 38 - 10:30-14:30</p><p>הרצליה פיתוח רח המעפילים 39 - 09:30-14:30</p><p>עין ורד רח הצבר -09:30-14:30</p><p>כל האתר ללא מע״מ עם קוד קופון <strong>17FINELAB </strong>בתקווה לבשורות טובות וימים שקטים🤍</p>",

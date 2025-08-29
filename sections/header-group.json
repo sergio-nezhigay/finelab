@@ -24,7 +24,7 @@
         "message_gD7GiB": {
           "type": "message",
           "settings": {
-            "text": "<strong>משלוח חינם ברכישה מעל 400 ₪ *לא כולל ריהוט</strong>"
+            "text": "<strong>משלוח חינם עד הבית ברכישה מעל 400 ₪ *לא כולל ריהוט</strong>"
           }
         },
         "message_6Af8aX": {
@@ -42,8 +42,8 @@
       "settings": {
         "enable_sticky": true,
         "autoplay": true,
-        "cycle_speed": 3,
-        "desktop_font_size": 12,
+        "cycle_speed": 4,
+        "desktop_font_size": 15,
         "mobile_font_size": 13,
         "background": "#cdb99d",
         "text_color": "#ffffff"
