@@ -8372,3 +8372,7 @@ free-shipping-bar span {
   object-fit: cover;
   display: block;
 }
+
+.site-breadcrumb nav {
+  text-align: center;
+}

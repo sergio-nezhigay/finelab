@@ -3,19 +3,27 @@
 <div class="store-location-wrapper">
   {% if store %}
     <div class="store-location-inner">
-    
       <div class="store-info">
         <h1>{{ store.title.value }}</h1>
         <p><strong>כתובת:</strong> {{ store.address.value }}</p>
-        <p><strong>טלפון:</strong> <a href="tel:{{ store.phone.value }}">{{ store.phone.value }}</a></p>
-        <p><strong>שעות פתיחה:</strong><br>{{ store.opening_hours_.value | newline_to_br }}</p>
+        <p>
+          <strong>טלפון:</strong> <a href="tel:{{ store.phone.value }}">{{ store.phone.value }}</a>
+        </p>
+        <p>
+          <strong>שעות פתיחה:</strong><br>
+          {{ store.opening_hours_.value | newline_to_br }}
+        </p>
 
-        <a href="https://www.waze.com/en/live-map/directions/%D7%A4%D7%99%D7%99%D7%9F-%D7%9C%D7%90%D7%91-%D7%A2%D7%99%D7%9F-%D7%95%D7%A8%D7%93-%D7%94%D7%A6%D7%91%D7%A8-12?navigate=yes&to=place.w.22872387.228920475.2086990"
-           target="_blank"
-           style="display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none; background: #CBBFA3; color: black; padding: 0.5rem 1rem; border-radius: 8px; font-weight: bold;">
-          <img src="https://cdn.shopify.com/s/files/1/0057/5976/2499/files/waze-icon.png?v=1746966010"
-               alt="Waze icon"
-               style="width: 20px; height: 20px;">
+        <a
+          href="https://www.waze.com/en/live-map/directions/%D7%A4%D7%99%D7%99%D7%9F-%D7%9C%D7%90%D7%91-%D7%A2%D7%99%D7%9F-%D7%95%D7%A8%D7%93-%D7%94%D7%A6%D7%91%D7%A8-12?navigate=yes&to=place.w.22872387.228920475.2086990"
+          target="_blank"
+          style="display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none; background: #CBBFA3; color: black; padding: 0.5rem 1rem; border-radius: 8px; font-weight: bold;"
+        >
+          <img
+            src="https://cdn.shopify.com/s/files/1/0057/5976/2499/files/waze-icon.png?v=1746966010"
+            alt="Waze icon"
+            style="width: 20px; height: 20px;"
+          >
           ניווט עם Waze
         </a>
 
@@ -27,38 +35,76 @@
           <div class="google-reviews-wrapper">
             <div class="elfsight-sapp-f442697a-4fb7-4792-ae31-ca589e71aeb6"></div>
           </div>
-        </div> <!-- סגירת google-reviews-section -->
-      </div> <!-- סגירת store-info -->
+        </div>
+        <!-- סגירת google-reviews-section -->
+      </div>
+      <!-- סגירת store-info -->
 
       <div class="store-map">
         <div class="map-wrapper">
           {{ store.google_map_embed.value }}
         </div>
       </div>
+    </div>
+    <!-- סגירת store-location-inner -->
 
-    </div> <!-- סגירת store-location-inner -->
+    {% assign bottom_media_type = store.bottom_media_type.value %}
 
-    {% if store.bottom_image or store.bottom_text %}
+    {% if store.bottom_image or store.bottom_video or store.bottom_text %}
       <div class="store-bottom-layout">
         <div class="store-bottom-section">
-          {% if store.bottom_image %}
-            <img src="{{ store.bottom_image | image_url: width: 1200 }}" alt="{{ store.title.value }} - תמונה תחתונה" />
-          {% endif %}
+          {% case bottom_media_type %}
+            {% when 'Video' %}
+              {% if store.bottom_video %}
+                <div class="video-wrapper">
+                  {{ store.bottom_video | media_tag: autoplay: false, loop: false, controls: true }}
+                </div>
+              {% endif %}
+            {% when 'Both' %}
+              <div class="bottom-media-flex">
+                {% if store.bottom_image %}
+                  <div class="bottom-image-wrapper">
+                    <img
+                      src="{{ store.bottom_image | image_url: width: 1200 }}"
+                      alt="{{ store.title.value }} - תמונה תחתונה"
+                    >
+                  </div>
+                {% endif %}
+                {% if store.bottom_video %}
+                  <div class="video-wrapper">
+                    {{ store.bottom_video | media_tag: autoplay: false, loop: false, controls: true }}
+                  </div>
+                {% endif %}
+              </div>
+            {% else %}
+              {% if store.bottom_image %}
+                <div class="bottom-image-wrapper">
+                  <img
+                    src="{{ store.bottom_image | image_url: width: 1200 }}"
+                    alt="{{ store.title.value }} - תמונה תחתונה"
+                  >
+                </div>
+              {% endif %}
+          {% endcase %}
           {% if store.bottom_text %}
-            <p>{{ store.bottom_text }}</p>
+            <p class="bottom-text">{{ store.bottom_text }}</p>
           {% endif %}
         </div>
       </div>
     {% endif %}
 
   {% else %}
-    <p>⚠️ לא נמצא מידע על הסניף</p>
+    <p>⚠️no information found about the branch</p>
   {% endif %}
 </div>
 
 <script src="https://apps.elfsight.com/p/platform.js" defer></script>
 
 <style>
+  .bottom-text {
+    font-size: 1.2rem;
+    line-height: 1.6;
+  }
   /* עטיפת כל העמוד */
   .store-location-wrapper {
     background-color: #f5f1ea;
@@ -113,6 +159,12 @@
     box-sizing: border-box;
   }
 
+  .video-wrapper video {
+    width: 100%;
+    height: auto;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+
   /* התאמות מובייל */
   @media screen and (max-width: 768px) {
     .store-location-inner {
@@ -144,7 +196,7 @@
       margin-top: 1.5rem;
     }
 
-    .store-info a[target="_blank"] {
+    .store-info a[target='_blank'] {
       margin-top: 1rem;
       display: inline-block;
     }
@@ -170,28 +222,45 @@
       max-width: 600px;
       margin: 0 auto;
     }
+
+    .video-wrapper {
+      margin: 1rem 0;
+    }
   }
 
   /* ✅ פריסה דו־עמודתית בדסקטופ */
-  @media screen and (min-width: 769px) {
-    .store-bottom-layout {
+  @media screen and (min-width: 1024px) {
+    .bottom-text {
+      max-width: 30%;
+      flex: 0 0 30%;
+      margin-left: 2rem;
+    }
+    .store-bottom-section {
       display: flex;
       gap: 3rem;
       align-items: flex-start;
       margin-top: 3rem;
     }
-
-    .store-bottom-layout .store-bottom-section {
-      flex: 1;
+    .bottom-media-flex {
+      flex: 1 1 0;
+      display: flex;
+      gap: 2rem;
     }
-
-    .store-bottom-layout .store-map {
-      flex: 1;
-      min-height: 400px;
+    .bottom-image-wrapper,
+    .video-wrapper {
+      flex: 1 1 0;
     }
-
-    .store-map iframe {
-      height: 100%;
+    .bottom-image-wrapper {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .bottom-image-wrapper img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 8px;
     }
   }
 </style>
