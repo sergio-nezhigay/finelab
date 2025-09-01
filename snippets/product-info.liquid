@@ -553,7 +553,6 @@
               {%- assign is_free_shipping = true -%}
             {%- endif -%}
 
-
             {%- assign show_feature = true -%}
             {%- if is_free_shipping -%}
               {%- assign product_price = product.selected_or_first_available_variant.price | default: product.price -%}
@@ -565,7 +564,18 @@
             {%- endif -%}
 
             {%- if show_feature -%}
-              <div class="features-block__item">
+              <div class="features-block__item" data-feature-index="{{ i }}" data-feature-text="{{ feature_text | escape }}" data-is-free-shipping="{{ is_free_shipping }}">
+                {%- if feature_icon != blank -%}
+                  <div class="features-block__icon">
+                    {{ feature_icon | image_url: width: 32 | image_tag: loading: 'lazy', class: 'constrained-image', style: 'max-width:32px;max-height:32px;' }}
+                  </div>
+                {%- endif -%}
+                <div class="features-block__text">
+                  <p>{{ feature_text }}</p>
+                </div>
+              </div>
+            {%- else -%}
+              <div class="features-block__item" data-feature-index="{{ i }}" data-feature-text="{{ feature_text | escape }}" data-is-free-shipping="{{ is_free_shipping }}" style="display:none;">
                 {%- if feature_icon != blank -%}
                   <div class="features-block__icon">
                     {{ feature_icon | image_url: width: 32 | image_tag: loading: 'lazy', class: 'constrained-image', style: 'max-width:32px;max-height:32px;' }}
@@ -684,3 +694,36 @@
     {%- endform -%}
   {%- endunless -%}
 </safe-sticky>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+
+    document.addEventListener('variant:change', function (event) {
+      var variant = event.detail && event.detail.variant;
+
+      var featuresBlock = document.querySelector('.features-block__container');
+      if (!featuresBlock) return;
+
+      var productTags = window.product && window.product.tags ? window.product.tags : [];
+
+      var minimalSumToHide = {{ settings.minimal_sum_to_hide | default: 400 | json }};
+      var minimalSumToHideCents = minimalSumToHide * 100;
+
+      featuresBlock.querySelectorAll('.features-block__item').forEach(function(item) {
+        var isFreeShipping = item.getAttribute('data-is-free-shipping') === 'true';
+        var featureText = item.getAttribute('data-feature-text') || '';
+        var showFeature = true;
+
+        if (isFreeShipping) {
+          var price = variant && typeof variant.price === 'number' ? variant.price : 0;
+
+          var tags = (variant && variant.product && variant.product.tags) ? variant.product.tags : productTags;
+          if (price < minimalSumToHideCents || (tags && tags.indexOf && tags.indexOf('no-free-shipping') !== -1)) {
+            showFeature = false;
+          }
+        }
+        item.style.display = showFeature ? '' : 'none';
+      });
+    });
+  });
+</script>
