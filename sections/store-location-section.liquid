@@ -26,17 +26,11 @@
           >
           ניווט עם Waze
         </a>
+        <!-- google-reviews-section moved below -->
 
-        <div class="google-reviews-section">
-          <h2 style="font-size: 1.5rem; margin-bottom: 1rem; text-align: center;">
-            מה הלקוחות שלנו אומרים על החנות בעין ורד
-          </h2>
-
-          <div class="google-reviews-wrapper">
-            <div class="elfsight-sapp-f442697a-4fb7-4792-ae31-ca589e71aeb6"></div>
-          </div>
+        <div class="hide-mobile">
+          {% render 'store-location-media', store: store %}
         </div>
-        <!-- סגירת google-reviews-section -->
       </div>
       <!-- סגירת store-info -->
 
@@ -48,50 +42,20 @@
     </div>
     <!-- סגירת store-location-inner -->
 
-    {% assign bottom_media_type = store.bottom_media_type.value %}
+    <!-- google-reviews-section moved here -->
+    <div class="google-reviews-section">
+      <h2 style="font-size: 1.5rem; margin-bottom: 1rem; text-align: center;">
+        מה הלקוחות שלנו אומרים על החנות בעין ורד
+      </h2>
 
-    {% if store.bottom_image or store.bottom_video or store.bottom_text %}
-      <div class="store-bottom-layout">
-        <div class="store-bottom-section">
-          {% case bottom_media_type %}
-            {% when 'Video' %}
-              {% if store.bottom_video %}
-                <div class="video-wrapper">
-                  {{ store.bottom_video | media_tag: autoplay: false, loop: false, controls: true }}
-                </div>
-              {% endif %}
-            {% when 'Both' %}
-              <div class="bottom-media-flex">
-                {% if store.bottom_image %}
-                  <div class="bottom-image-wrapper">
-                    <img
-                      src="{{ store.bottom_image | image_url: width: 1200 }}"
-                      alt="{{ store.title.value }} - תמונה תחתונה"
-                    >
-                  </div>
-                {% endif %}
-                {% if store.bottom_video %}
-                  <div class="video-wrapper">
-                    {{ store.bottom_video | media_tag: autoplay: false, loop: false, controls: true }}
-                  </div>
-                {% endif %}
-              </div>
-            {% else %}
-              {% if store.bottom_image %}
-                <div class="bottom-image-wrapper">
-                  <img
-                    src="{{ store.bottom_image | image_url: width: 1200 }}"
-                    alt="{{ store.title.value }} - תמונה תחתונה"
-                  >
-                </div>
-              {% endif %}
-          {% endcase %}
-          {% if store.bottom_text %}
-            <p class="bottom-text">{{ store.bottom_text }}</p>
-          {% endif %}
-        </div>
+      <div class="google-reviews-wrapper">
+        <div class="elfsight-sapp-f442697a-4fb7-4792-ae31-ca589e71aeb6"></div>
       </div>
-    {% endif %}
+    </div>
+    <!-- סגירת google-reviews-section -->
+    <div class="hide-desktop">
+      {% render 'store-location-media', store: store %}
+    </div>
 
   {% else %}
     <p>⚠️no information found about the branch</p>
@@ -116,6 +80,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
+    margin-bottom: 2rem;
   }
 
   /* עמודת מידע על הסניף */
@@ -202,6 +167,9 @@
     }
 
     .store-bottom-section {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
       margin-top: 2rem;
       text-align: center;
       background-color: #fff;
@@ -230,14 +198,10 @@
 
   /* ✅ פריסה דו־עמודתית בדסקטופ */
   @media screen and (min-width: 768px) {
-    .bottom-text {
-      max-width: 30%;
-      flex: 0 0 30%;
-      margin-left: 2rem;
-    }
     .store-bottom-section {
       display: flex;
-      gap: 3rem;
+      flex-direction: column;
+      gap: 1rem;
       align-items: flex-start;
       margin-top: 3rem;
     }
@@ -248,7 +212,7 @@
     }
     .bottom-image-wrapper,
     .video-wrapper {
-      flex: 1 1 0;
+      width: 100%;
     }
     .bottom-image-wrapper {
       width: 100%;
@@ -261,6 +225,21 @@
       height: auto;
       object-fit: cover;
       border-radius: 8px;
+    }
+  }
+
+  .hide-mobile {
+    display: block;
+  }
+  .hide-desktop {
+    display: none;
+  }
+  @media screen and (max-width: 768px) {
+    .hide-mobile {
+      display: none !important;
+    }
+    .hide-desktop {
+      display: block !important;
     }
   }
 </style>

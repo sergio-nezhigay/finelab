@@ -1,0 +1,44 @@
+{% assign bottom_media_type = store.bottom_media_type.value %}
+
+{% if store.bottom_image or store.bottom_video or store.bottom_text %}
+  <div class="store-bottom-layout">
+    <div class="store-bottom-section">
+      {% if store.bottom_text %}
+        <p class="bottom-text">{{ store.bottom_text }}</p>
+      {% endif %}
+      {% case bottom_media_type %}
+        {% when 'Video' %}
+          {% if store.bottom_video %}
+            <div class="video-wrapper">
+              {{ store.bottom_video | media_tag: autoplay: false, loop: false, controls: true }}
+            </div>
+          {% endif %}
+        {% when 'Both' %}
+          <div class="bottom-media-flex">
+            {% if store.bottom_image %}
+              <div class="bottom-image-wrapper">
+                <img
+                  src="{{ store.bottom_image | image_url: width: 1200 }}"
+                  alt="{{ store.title.value }} - תמונה תחתונה"
+                >
+              </div>
+            {% endif %}
+            {% if store.bottom_video %}
+              <div class="video-wrapper">
+                {{ store.bottom_video | media_tag: autoplay: false, loop: false, controls: true }}
+              </div>
+            {% endif %}
+          </div>
+        {% else %}
+          {% if store.bottom_image %}
+            <div class="bottom-image-wrapper">
+              <img
+                src="{{ store.bottom_image | image_url: width: 1200 }}"
+                alt="{{ store.title.value }} - תמונה תחתונה"
+              >
+            </div>
+          {% endif %}
+      {% endcase %}
+    </div>
+  </div>
+{% endif %}
